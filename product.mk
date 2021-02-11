@@ -13,8 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+MAINTAINER := Linux4
+MAINTAINER_CERT := linux4
+
+ifneq ($(filter x1s y2s z3s,$(LINEAGE_BUILD)),)
+MAINTAINER := Exynoobs
+MAINTAINER_CERT := exynoobs
+endif
+
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/extra/certs/linux4
+    vendor/extra/certs/$(MAINTAINER_CERT)
 
 PRODUCT_PRODUCT_PROPERTIES += \
-    lineage.updater.uri=https://raw.githubusercontent.com/Linux4/lineage_OTA/master/{device}.json
+    lineage.updater.uri=https://raw.githubusercontent.com/$(MAINTAINER)/lineage_OTA/master/{device}.json
