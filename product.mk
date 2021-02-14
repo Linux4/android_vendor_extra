@@ -26,3 +26,5 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 
 PRODUCT_PRODUCT_PROPERTIES += \
     lineage.updater.uri=https://raw.githubusercontent.com/$(MAINTAINER)/lineage_OTA/master/{device}.json
+
+-include vendor/linux4/security/$(MAINTAINER_CERT).mk
