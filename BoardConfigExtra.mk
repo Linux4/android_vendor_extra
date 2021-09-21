@@ -15,3 +15,6 @@
 
 ## Properties
 TARGET_VENDOR_PROP += vendor/extra/vendor.prop
+
+## Recovery
+BOARD_USES_FULL_RECOVERY_IMAGE := true
