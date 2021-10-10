@@ -13,6 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+## Recovery ADB keys
+PRODUCT_COPY_FILES += \
+    vendor/extra/adb_keys:$(TARGET_COPY_OUT_RECOVERY)/root/adb_keys
+
 MAINTAINER := linux4
 
 ifneq ($(filter x1s y2s z3s,$(LINEAGE_BUILD)),)
