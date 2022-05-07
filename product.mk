@@ -27,8 +27,10 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/extra/certs/$(MAINTAINER)
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    vendor/extra/overlay \
     vendor/extra/$(MAINTAINER)/overlay
 DEVICE_PACKAGE_OVERLAYS += \
+    vendor/extra/overlay \
     vendor/extra/$(MAINTAINER)/overlay
 
 
