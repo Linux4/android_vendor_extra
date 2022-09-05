@@ -14,7 +14,7 @@
 # limitations under the License.
 
 ## Properties
-TARGET_VENDOR_PROP += vendor/extra/vendor.prop
+TARGET_PRODUCT_PROP += vendor/extra/product.prop
 
 ## Recovery
 BOARD_USES_FULL_RECOVERY_IMAGE := true
