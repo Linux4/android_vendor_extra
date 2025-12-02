@@ -4,3 +4,8 @@ if [ -z "$TARGET_UNOFFICIAL_BUILD_ID" ] && [ -z "$TARGET_RO_FILE_SYSTEM_TYPE" ];
     export BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE=104857600
     export BOARD_VENDORIMAGE_EXTFS_INODE_COUNT=-1
 fi
+
+for FILE in $(grep -iRl Xmx4096M $(gettop)/build/soong); do
+	echo "Patching maximum java heap size in $FILE..."
+	sed -i 's/Xmx4096M/Xmx2048M/g' "$FILE"
+done
