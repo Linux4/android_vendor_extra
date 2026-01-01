@@ -9,3 +9,10 @@ for FILE in $(grep -iRl Xmx4096M $(gettop)/build/soong); do
 	echo "Patching maximum java heap size in $FILE..."
 	sed -i 's/Xmx4096M/Xmx2048M/g' "$FILE"
 done
+
+for BUILD in make soong; do
+	for FILE in $(grep -iRl vendor/lineage-priv $(gettop)/build/"$BUILD"); do
+		echo "Patching release-keys path in $FILE..."
+		sed -i 's|vendor/lineage-priv|vendor/linux4/security|g' "$FILE"
+	done
+done
