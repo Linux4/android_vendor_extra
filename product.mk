@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2021-2026 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,21 +17,12 @@
 PRODUCT_COPY_FILES += \
     vendor/extra/adb_keys:$(TARGET_COPY_OUT_RECOVERY)/root/adb_keys
 
-MAINTAINER := linux4
-
-ifneq ($(filter x1s y2s z3s,$(LINEAGE_BUILD)),)
-MAINTAINER := exynoobs
-endif
-
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/extra/certs/$(MAINTAINER)
+    vendor/extra/certs/linux4
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/extra/overlay \
-    vendor/extra/$(MAINTAINER)/overlay
+    vendor/extra/overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/extra/overlay \
-    vendor/extra/$(MAINTAINER)/overlay
+    vendor/extra/overlay
 
-
-include vendor/linux4/security/$(MAINTAINER).mk
+include vendor/linux4/security/security.mk

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2020 The LineageOS Project
+     Copyright (C) 2021-2026 The LineageOS Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -12,5 +12,14 @@
      limitations under the License.
 -->
 <resources>
+    <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
+    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/Linux4/lineage_OTA/master/{device}.json</string>
+    <string name="menu_changelog_url" translatable="false">https://lineage.linux4.de/changes/<xliff:g id="device_name">%1$s</xliff:g>.html</string>
+
     <bool name="config_hideRecoveryUpdate">true</bool>
 </resources>
